@@ -17,7 +17,7 @@
 | **Read/Write Ratio** | `0.5` |
 | **Aggressive Mode** | `true` |
 | **Publish Metrics** | `false` |
-| **Show Progress** | `true` |
+| **Show Progress** | `true` | 
 
 ---
 
