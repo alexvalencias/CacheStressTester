@@ -36,7 +36,8 @@ All runtime parameters are loaded from **`appsettings.json`**, environment varia
     "ReadWriteRatio": 0.5,
     "AggressiveMode": true,
     "PublishMetrics": false,
-    "ShowProgress": true
+    "ShowProgress": true,
+    "Tag": ""
   }
 }
 ```
@@ -55,6 +56,7 @@ All runtime parameters are loaded from **`appsettings.json`**, environment varia
 | **AggressiveMode** | `bool` | `false` | When true, enables delete operations and variable payloads. |
 | **PublishMetrics** | `bool` | `false` | If true, publishes metrics to CloudWatch or App Insights. |
 | **ShowProgress** | `bool` | `true` | Controls whether a live progress bar is displayed in console. |
+| **Tag** | `string` | `""` | Helps adding a sufix to results for a better identification. |
 
 ---
 
