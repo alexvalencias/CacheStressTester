@@ -4,6 +4,7 @@ public class CacheTestConfig
 {
     public string Environment { get; set; } = "AWS";
     public string RedisConnectionString { get; set; } = "localhost:6379";
+    public string RedisSecretArn { get; set; } = string.Empty;
     public int DurationSeconds { get; set; } = 20;
     public int Threads { get; set; } = 5;
     public int RequestsPerThread { get; set; } = 200;

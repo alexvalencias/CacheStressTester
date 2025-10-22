@@ -7,6 +7,8 @@ public class AzureRedisClient : ICacheClient
     private readonly ConnectionMultiplexer _connection;
     private readonly IDatabase _db;
 
+    public bool IsConnected => _connection.IsConnected;
+
     public AzureRedisClient(string connectionString)
     {
         _connection = ConnectionMultiplexer.Connect(connectionString);
