@@ -1,0 +1,14 @@
+﻿# =========================
+# Runtime-only Dockerfile for CacheStressTester
+# =========================
+FROM mcr.microsoft.com/dotnet/runtime:8.0
+WORKDIR /app
+
+# Copy pre-published binaries (adjust if needed)
+COPY . .
+
+# Set environment variable defaults (override via -e)
+ENV STRESS_ENVIRONMENT="AWS"     STRESS_THREADS=50     STRESS_REQUESTSPERTHREAD=500     STRESS_DURATIONSECONDS=30     STRESS_AGGRESSIVEMODE=true     STRESS_PUBLISHMETRICS=false
+
+# Entry point
+ENTRYPOINT ["dotnet", "CacheStressTester.dll"]
