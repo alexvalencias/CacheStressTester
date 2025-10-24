@@ -40,10 +40,10 @@ packages/
 *.userprefs
 
 # Publish outputs
-PublishProfiles/
-app.publish/
-*.pubxml
-*.publish.xml
+# PublishProfiles/
+# app.publish/
+# *.pubxml
+# *.publish.xml
 
 # Others
 *.pdb

@@ -1,0 +1,24 @@
+﻿dotnet publish /p:PublishProfile=LinuxRelease
+
+bin/Release/net8.0/publish/linux-x64/
+
+scp -r ./bin/Release/net8.0/publish/linux-x64 ec2-user@<ip>:/home/ec2-user/CacheStressTester
+
+cd /home/ec2-user/CacheStressTester
+dotnet CacheStressTester.dll --Environment AWS --Threads 500 --RequestsPerThread 20000 --AwsSecretArn arn:aws:secretsmanager:us-east-1:XXXX:secret:RedisConnectionString
+
+**************************************************************************************
+
+Copy script and binaries to server
+
+scp setup_stress.sh ec2-user@<ec2-ip>:/home/ec2-user/
+scp -r ./bin/Release/net8.0/publish/linux-x64 ec2-user@<ec2-ip>:/home/ec2-user/publish
+
+Change permissions and run on EC2
+
+sudo chmod +x setup_stress.sh
+sudo ./setup_stress.sh
+
+Stop a running test
+
+pkill -f CacheStressTester.dll
